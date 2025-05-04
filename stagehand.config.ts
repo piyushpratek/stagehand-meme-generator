@@ -1,7 +1,7 @@
 import type { ConstructorParams } from "@browserbasehq/stagehand";
 import dotenv from "dotenv";
 import { AISdkClient } from "./llm_clients/aisdk_client.js";
-import { openai } from "@ai-sdk/openai";
+import { google } from "@ai-sdk/google";
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ const StagehandConfig: ConstructorParams = {
   // LLM configuration
 
   llmClient: new AISdkClient({
-    model: openai("gpt-4o-mini"),
+    model: google("gemini-1.5-flash"),
   }),
 
   // Browser configuration
